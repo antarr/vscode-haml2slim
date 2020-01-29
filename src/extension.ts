@@ -4,7 +4,7 @@ import { spawnSync } from "child_process";
 import { TextDecoder } from "util";
 
 function haml2slim(html: string) {
-	return sh("haml2slim", ["--ruby19-attributes"], html);
+	return sh("haml2slim", ["--trace"], html);
 }
 
 function sh(cmd: string, args: Array<string>, stdin: string): string | null {

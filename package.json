@@ -14,10 +14,12 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [{
-			"command": "extension.haml2slim",
-			"title": "Convert Haml to Slim"
-		}]
+		"commands": [
+			{
+				"command": "extension.haml2slim",
+				"title": "Convert Haml to Slim"
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
