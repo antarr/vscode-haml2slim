@@ -1,10 +1,10 @@
-# html2haml README
+# haml2slim README
 
-This extension adds `Convert HTML to Haml (extension.html2haml)` command to run `html2haml` command with active file.
+This extension adds `Convert Haml to Slim (extension.haml2slim)` command to run `haml2slim` command with active file.
 
 ## Requirements
 
-`gem install html2haml`
+`gem install haml2slim`
 
 ## Release Notes
 

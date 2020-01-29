@@ -1,7 +1,7 @@
 {
-	"name": "html2haml",
-	"displayName": "html2haml",
-	"description": "Run html2haml command to convert HTML to Haml with active file",
+	"name": "haml2slim",
+	"displayName": "haml2slim",
+	"description": "Run haml2slim command to convert Haml to Slim with active file",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.36.0"
@@ -10,13 +10,13 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.html2haml"
+		"onCommand:extension.haml2slim"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [{
-			"command": "extension.html2haml",
-			"title": "Convert HTML to Haml"
+			"command": "extension.haml2slim",
+			"title": "Convert Haml to Slim"
 		}]
 	},
 	"scripts": {
@@ -40,6 +40,6 @@
 	"publisher": "labocho",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/labocho/vscode-html2haml.git"
+		"url": "https://github.com/labocho/vscode-haml2slim.git"
 	}
 }

@@ -3,8 +3,8 @@ import * as vscode from 'vscode';
 import { spawnSync } from "child_process";
 import { TextDecoder } from "util";
 
-function html2haml(html: string) {
-	return sh("html2haml", ["--ruby19-attributes"], html);
+function haml2slim(html: string) {
+	return sh("haml2slim", ["--ruby19-attributes"], html);
 }
 
 function sh(cmd: string, args: Array<string>, stdin: string): string | null {
@@ -20,12 +20,12 @@ function sh(cmd: string, args: Array<string>, stdin: string): string | null {
 
 export function activate(context: vscode.ExtensionContext) {
 
-	let disposable = vscode.commands.registerCommand('extension.html2haml', () => {
+	let disposable = vscode.commands.registerCommand('extension.haml2slim', () => {
 		const editor = vscode.window.activeTextEditor;
 		if (editor === undefined) { return; }
 
 		const data = editor.document.getText();
-		const haml = html2haml(data);
+		const haml = haml2slim(data);
 		if (haml === null) { return; }
 
 		editor.edit((edit) => {
@@ -33,10 +33,10 @@ export function activate(context: vscode.ExtensionContext) {
 				new vscode.Range(editor.document.positionAt(0), editor.document.positionAt(data.length)),
 				haml,
 			);
-			vscode.window.setStatusBarMessage("html2haml done.", 2000);
+			vscode.window.setStatusBarMessage("haml2slim done.", 2000);
 		});
 
-		vscode.languages.setTextDocumentLanguage(editor.document, "haml");
+		vscode.languages.setTextDocumentLanguage(editor.document, "slim");
 	});
 
 	context.subscriptions.push(disposable);
